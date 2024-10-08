@@ -1,2 +1,2 @@
-const a = 10 ;
-let b = 20 ;
+const a = 11;
+let b = 22;
