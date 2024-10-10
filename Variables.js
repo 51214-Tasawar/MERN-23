@@ -24,4 +24,9 @@ console.log(a) // a = 10
 
 {
     // var is globally Scope  
+    b = 40
+    console.log(b)
+    c=  3 - 4 + 2
+   console.log(c)
+     
 }
