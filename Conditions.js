@@ -52,5 +52,5 @@ if(a%4==0){
                 console.log ("Invalid Input");
                 break ;  }
             }
-C= b=10||11||12||1||2||3 ? "Cold Session" : "Hot Session" ;
+C= b==10|| b==11|| b==12|| b==1||b==2||b==3 ? "Cold Session" : "Hot Session" ;
 console.log(C);
