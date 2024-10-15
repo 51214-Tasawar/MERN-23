@@ -1,6 +1,6 @@
 console.log("Counting the days of Month")
-a =2023 ;
-b=2
+a =2024;
+b=5
 if(a%4==0){
     console.log("This Is Year Of Leap")
     switch(b){
@@ -46,10 +46,11 @@ if(a%4==0){
                case 6 :
                case 9 :
                case 11 :
-                   console.log("This is month of 30 Days") ;
+                console.log("This is month of 30 Days") ;
                 break;
                 default :
                 console.log ("Invalid Input");
-                break ;
-       }
-}
+                break ;  }
+            }
+C= b=10||11||12||1||2||3 ? "Cold Session" : "Hot Session" ;
+console.log(C);
