@@ -19,3 +19,5 @@ Info(Obj1)
 
 Obj1["Salary_1"] = 70000;  // Assigning New Values to Object
 console.log(Obj1.Salary_1)
+const {name , ...age} = Obj1; // Using Rest Operators
+console.log( name ,age)

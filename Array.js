@@ -19,3 +19,6 @@ arr.unshift(1)
 // arr.push("Test") //Appends new elements to the end of an array
 arr.pop() //Removes the last element from an array and returns it
 console.log(arr)
+
+const [a,b,...c]=arr1;
+console.log(a ,b,c)
