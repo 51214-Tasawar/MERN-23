@@ -1,7 +1,8 @@
-let admin = require("./Main")
-let employee =(nam)=>{
-  return nam
+const employee =(name , desination)=>{
+  name = "Naqi Khan"
+  desination = "Auto Mechnic"
+console.log(`My name is ${name} my authority is ${desination}`)
 }
-admin("Naqi Khan" , 
-    "knckcxjnhq")
-employee(admin)
+employee("Tasawar Abbas" , "Developers")
+
+module.exports = employee

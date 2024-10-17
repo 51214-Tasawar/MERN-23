@@ -1,7 +1,6 @@
-const admin =(name , desination)=>{
-    name = "Inshal Khan"
-    desination = "manager"
-    console.log(`My name is ${name} and i am ${desination} in this organization `)
+let employee = require("./employee")
+
+const Admin =(employee)=>{
+    console.log(employee)
 }
-admin("Tasawar Abbas" , "Admin")
-module.exports = admin ;
+Admin(employee)
