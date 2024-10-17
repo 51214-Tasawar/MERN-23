@@ -1,14 +1,21 @@
-const obj ={
-    name : "Person1" ,
-    age : 28 ,
-    address : {
-        city :"Lahore" ,
-        province: "Punjab" ,
-        Country : "Pakistan"
+ const Obj1= {
+    name :"Person1",
+    age : 24,
+    address:{
+        city:'Lahore',
+        provinace:'Punjab',
+        country :'Pakistan'
     }
+ }
+// const{name , age , address:{city}} = Obj1 ; // De-Structring of an Object and object within object
+// console.log(city)
+Obj1.desination = "Admin"; // Assigning New Values to Object
+function Info({name , desination , address:{city}}){  // De-Structring of an Object using functin
+    console.log(`My name is ${name} .
+    My authority is ${desination} .
+    I Live in ${city}`)
 }
-obj.desnation ="Admin";
-function Info({name , desnation ,address:{province}}){
-    console.log(`My name is ${name} and My Authority in this Organization is ${desnation} . I am living in ${province}`)
-}
-Info(obj)
+Info(Obj1)
+
+Obj1["Salary_1"] = 70000;  // Assigning New Values to Object
+console.log(Obj1.Salary_1)
