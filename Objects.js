@@ -1,8 +1,14 @@
 const obj ={
     name : "Person1" ,
     age : 28 ,
-    address : "Lahore"
+    address : {
+        city :"Lahore" ,
+        province: "Punjab" ,
+        Country : "Pakistan"
+    }
 }
-const{ name , address} = obj
-console.log(name)
-console.log(address)
+obj.desnation ="Admin";
+function Info({name , desnation ,address:{province}}){
+    console.log(`My name is ${name} and My Authority in this Organization is ${desnation} . I am living in ${province}`)
+}
+Info(obj)
