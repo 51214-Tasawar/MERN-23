@@ -20,5 +20,5 @@ arr.unshift(1)
 arr.pop() //Removes the last element from an array and returns it
 console.log(arr)
 
-const [a,b,...c]=arr1;
-console.log(a ,b,c)
+const [a,b,...c]=arr1; //De Structring an-Array and using Rest Operators 
+console.log(a ,b,c) 
