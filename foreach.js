@@ -3,9 +3,6 @@ arr.forEach(function(value,index ,arr1){
    console.log(`${index} -> has Value ${value}`)
    console.log(arr1)
 })
-
-
-
 // Map Fun 
 const A = arr.map(function(value){
     return value
