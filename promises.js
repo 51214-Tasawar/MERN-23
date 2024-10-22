@@ -11,7 +11,7 @@
 // console.log(error)
 // })
 
-/*    Using async and await for asynchrounous programming
+//   Using async and await for asynchrounous programming
 const Watch = new Promise((res)=>{
   setTimeout(()=>{
     res(new Date ())
@@ -31,4 +31,4 @@ const Main = async()=>{
         console.log(result)
     })
 }
-Main() */
+Main() 
