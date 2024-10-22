@@ -1,22 +1,12 @@
-// 
-const promises1 = new Promise((res , rej)=>{
-    const a = 15 ;
-    if( a%2== 0){
-    res("Even")
-    }
-    rej("odd")
-})
-promises1.then((res)=>{
-console.log(res)
-}).catch((rej)=>{
-    console.log(rej)
-})
-const stopWatch = new Promise((res)=>{
-setTimeout=()=>{
-new Date ();
-},4000
+const Promise1 = new Promise((res , rej)=>{
+    a = 9 ;
+    if(a%2==0)
+        res("Even Number");
+    rej("The Given Number is odd")
 })
 
-stopWatch.then(()=>{
-console.log(res)
+Promise1.then((result)=>{
+console.log(result)
+}).catch((error)=>{
+console.log(error)
 })
