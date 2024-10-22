@@ -4,14 +4,14 @@
 //         res("Even Number");
 //     rej("The Given Number is odd")
 // })
-
 // Promise1.then((result)=>{
 // console.log(result)
 // }).catch((error)=>{
 // console.log(error)
 // })
-
 //   Using async and await for asynchrounous programming
+
+/*   Promise 
 const Watch = new Promise((res)=>{
   setTimeout(()=>{
     res(new Date ())
@@ -32,3 +32,16 @@ const Main = async()=>{
     })
 }
 Main() 
+         -------------------Stop Watch---------------*/
+const stopWatch =async()=>{
+  const Time = new Promise((res)=>{
+  setTimeout(()=>{
+    res(new Date())
+  },1000)
+  })
+  await Time.then((res)=>{
+    console.log(res)
+  })
+  stopWatch()
+}
+stopWatch();
