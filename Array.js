@@ -1,4 +1,5 @@
-//Arrays are itrative
+{
+    //Arrays are itrative
 let arr = [1 ,2 ,3 ,4 ,5]
  
 let arr1 = arr ; // Assigning arr to arr1
@@ -22,3 +23,6 @@ console.log(arr)
 
 const [a,b,...c]=arr1; //De Structring an-Array and using Rest Operators 
 console.log(a ,b,c) 
+}
+const arr =["Name" , 12 , null , "Undefined" , false ]
+console.log(arr)
