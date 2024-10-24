@@ -26,3 +26,7 @@ console.log(a ,b,c)
 }
 const arr =["Name" , 12 , null , "Undefined" , false ]
 console.log(arr)
+
+const [a,b ,c] = arr ;
+
+console.log(`1si is ${a} , 2nd is ${b} 3rd is ${c}`);
