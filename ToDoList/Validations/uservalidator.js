@@ -30,7 +30,7 @@ module.exports = {
  },
  Get :async(req , res , next)=>{
     try{
-        await CreateSchema.validateAsync(req.query)
+        await getDeleteSchema.validateAsync(req.query)
         next();
     }catch(error){
         return res.send({
@@ -42,7 +42,7 @@ module.exports = {
  },
  Update :async(req , res , next)=>{
     try{
-        await CreateSchema.validateAsync(req.body)
+        await UpdateSchema.validateAsync(req.body)
         next();
     }catch(error){
         return res.send({
@@ -54,7 +54,7 @@ module.exports = {
  },
  Delete :async(req , res , next)=>{
     try{
-        await CreateSchema.validateAsync(req.query)
+        await getDeleteSchema.validateAsync(req.query)
         next();
     }catch(error){
         return res.send({
