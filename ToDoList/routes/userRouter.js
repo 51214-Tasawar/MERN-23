@@ -1,17 +1,10 @@
 const routes = require("express").Router();
 
-    routes.post("/createUser",(req ,res)=>{
-        res.send("New User Created Successfully");
-         })
-    routes.get("/getUsers" , (req, res)=>{
-        res.send("Get All User Successfully")
-         })
-    routes.post("/updateUser" , (req,res)=>{
-        res.send("Update User Successfully")
-    })
+const {createUser , getUsers , updateUser , deleteUser} = require("../Controllers/userController");
 
-    routes.get("/deleteUser" , (req ,res)=>{
-     res.send("User Deleted SuccessFully")
-    })
+routes.post("/createUser", createUser);
+routes.get("/getUsers" , getUsers);
+routes.patch("/updateUser" , updateUser) ;
+routes.delete("/deleteUser" , deleteUser);
 
-    module.exports = routes ;
+module.exports = routes ;

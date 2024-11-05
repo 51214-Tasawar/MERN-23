@@ -1,13 +1,9 @@
-const rout = require("express").Router();
+const rout = require("express").Router(); // creating Router
 
-rout.post("/signUp" , (req ,res)=>{
-res.send("sign Up the New User -- >")
-})
-rout.get("./login", (req ,res)=>{
-res.send("Login the User Already Existing --->")
-})
-rout.get("/logout", (req,res)=>{
-res.send("logout the current User -->")
-})
+const {signUp , login , logout} = require("../Controllers/authController") // Importing Functions
+
+rout.post("/signUp", signUp);
+rout.get("/login" , login);
+rout.get("/logout" , logout)
 
 module.exports = rout ;
