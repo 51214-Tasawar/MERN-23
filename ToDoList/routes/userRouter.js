@@ -1,11 +1,11 @@
 const routes = require("express").Router();
 
 const {createUser , getUsers , updateUser , deleteUser} = require("../Controllers/userController");
-const {createnewUser} = require("../Validations/uservalidator")
+const {Create ,Update ,Delete ,Get} = require("../Validations/uservalidator")
 
-routes.post("/createUser",createnewUser,createUser);
-routes.get("/getUsers" , getUsers);
-routes.patch("/updateUser" , updateUser) ;
-routes.delete("/deleteUser" , deleteUser);
+routes.post("/createUser",Create,createUser);
+routes.get("/getUsers" , Get,getUsers);
+routes.patch("/updateUser" ,Update,updateUser) ;
+routes.delete("/deleteUser" , Delete,deleteUser);
 
 module.exports = routes ;

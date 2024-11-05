@@ -1,19 +1,67 @@
 const joi = require("joi")
 
-const newUser = joi.object({
-    name : joi.string().min(5).max(60).required(),
-username : joi.string().min(8).max(60).required(),
+const CreateSchema = joi.object({
+name     : joi.string().min(8).max(50).required(),
+username : joi.string().min(8).max(50).required(),
 password : joi.string().min(8).max(1000).required()
 })
-module.exports ={
-    createnewUser :async(req ,res , next)=>{
-               try{
-              await newUser.validateAsync(req.body)
-               next();
-               }catch(error){
-             return  res.send({
-                error : error.message
-               })
-               }
+
+const UpdateSchema = joi.object({
+    username : joi.string().min(8).max(50).required(),
+    password : joi.string().min(8).max(1000).required()
+})
+
+getDeleteSchema = joi.object({
+    username : joi.string().min(8).max(50).required()
+})
+
+module.exports = {
+ Create :async(req , res , next)=>{
+   try{
+ await CreateSchema.validateAsync(req.body)
+ next();
+   }catch(error){
+    return res.send({
+     status: "Not Ok",
+     code : 400 ,
+     error : error.message
+    })
+     }
+ },
+ Get :async(req , res , next)=>{
+    try{
+        await CreateSchema.validateAsync(req.query)
+        next();
+    }catch(error){
+        return res.send({
+            status: "Not Ok",
+            code : 400 ,
+            error : error.message
+           })
     }
+ },
+ Update :async(req , res , next)=>{
+    try{
+        await CreateSchema.validateAsync(req.body)
+        next();
+    }catch(error){
+        return res.send({
+            status: "Not Ok",
+            code : 400 ,
+            error : error.message
+           })
+    }
+ },
+ Delete :async(req , res , next)=>{
+    try{
+        await CreateSchema.validateAsync(req.query)
+        next();
+    }catch(error){
+        return res.send({
+            status: "Not Ok",
+            code : 400 ,
+            error : error.message
+           })
+    }
+ }
 }
