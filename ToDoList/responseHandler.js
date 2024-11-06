@@ -1,15 +1,15 @@
-const responseHandler =(res , data)=>{
+module.exports =(res ,data)=> {
+   
    try{
-   res.send({
-    code : 200 ,
-    data : data
-   })
+    res.send({
+      code : 200 ,
+      data : data
+    })
    }catch(error){
-   res.send({
-    code : 400 ,
-    error : error.message
-   })
+      res.send({
+         code : 400 ,
+         error : error
+       })
+   
    }
 }
-
-module.export = responseHandler ;

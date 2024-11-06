@@ -1,32 +1,31 @@
 const {DataTypes , Model} = require("sequelize") ;
-const connection = require("../../new")
+const sequelize = require("../../dbConnection");
+const { Connection } = require("pg");
 
-class users extends Model{}
+class users extends Model { } ;
 
-users.init({
+users.init ({
     userId :{
         primaryKey : true ,
-        type : DataTypes.STRING(60) ,
-    }, 
-    name : {
-        type : DataTypes.STRING(34) ,
+        type : DataTypes.STRING(100),
+    },
+    name:{
+        type : DataTypes.STRING(100),
         allowNull : false
     },
-    username : {
-        type : DataTypes.STRING(34) ,
+    username: {
         unique : true ,
-        allowNull : false
+        type : DataTypes.STRING(100)
     },
-    password : {
-        type : DataTypes.STRING(6000),
-        allowNull : false 
+    password:{
+   type :DataTypes.STRING(1000),
+   allowNull : true
     }
-},
-{
-    name : "users" ,
+},{
+    name : "UserTable" ,
     timestamps : true ,
-    paranoid : true  ,
-    sequelize : connection 
-})
+    paranoid : true,
+    sequelize : sequelize
+});
 
-module.exports = users ;
+module.exports = users ; 
