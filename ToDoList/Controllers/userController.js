@@ -1,15 +1,13 @@
 const {hash} = require("bcryptjs");
 
+const responseHandler = require("../responseHandler")
+
 
 module.exports={
     createUser:async(req,res)=>{
         req.body.password = await hash(req.body.password , 10)
    try{
-     return res.send({
-        status : "Ok" ,
-        code : 200 ,
-        response : req.body 
-     })
+   return responseHandler(res , req.body)
    }catch(error){
   return res.send({
     status : "Ok" ,
@@ -20,11 +18,7 @@ module.exports={
     } ,
     getUsers:(req,res)=>{
    try{
-     return res.send({
-        status: "Ok" ,
-        code : 200 ,
-        response: req.query 
-     })
+      return responseHandler(res , req.body)
    }catch(error){
    return res.send({
     status : " Not Ok " ,
@@ -35,11 +29,7 @@ module.exports={
     },
     updateUser:(req , res)=>{
        try{
-        return res.send({
-            status:"Ok",
-            code : 200 ,
-            response : req.body
-        })
+         return responseHandler(res , req.body)
        }catch(error){
      return res.send({
         status : "Not Ok" ,
@@ -50,11 +40,7 @@ module.exports={
     },
     deleteUser:(req ,res)=>{
     try{
-       return  res.send({
-        status: "Ok" ,
-        code : 200 ,
-        response :req.query
-       })
+      return responseHandler(res , req.body)
     }catch(error){
    return res.send({
     status: "Not Ok",
