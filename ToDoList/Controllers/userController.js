@@ -1,17 +1,20 @@
 const {hash} = require("bcryptjs");
-const {v4:uuid} = require("uuid")
-const responseHandler = require("../responseHandler")
-const errorHandler =require("../errorHandler");
+const {v4:uuid} = require("uuid") ;
 
+
+const responseHandler = require("../responseHandler");
+const errorHandler =require("../errorHandler");
+const create= require("../models/usermodel")
 
 
 module.exports={
     createUser:async(req,res)=>{
         
    try{
-   req.body.userId = uuid();
+    req.body.userId = uuid();
     req.body.password = await hash(req.body.password , 10) ;
-   return responseHandler(res , req.body);
+    const response = await create(req.body)
+   return responseHandler (res,response.response);
    }catch(error){
 return errorHandler(res , error)
    }

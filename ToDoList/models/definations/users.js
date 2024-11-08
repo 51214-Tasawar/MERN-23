@@ -15,6 +15,7 @@ users.init ({
     },
     username: {
         unique : true ,
+        allowNull:false ,
         type : DataTypes.STRING(100)
     },
     password:{
