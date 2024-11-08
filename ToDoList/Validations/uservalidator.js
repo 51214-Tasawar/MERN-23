@@ -1,6 +1,7 @@
 const joi = require("joi")
 
 const CreateSchema = joi.object({
+//  userId  :joi.string().min().max().required ,
 name     : joi.string().min(8).max(50).required(),
 username : joi.string().min(8).max(50).required(),
 password : joi.string().min(8).max(1000).required()

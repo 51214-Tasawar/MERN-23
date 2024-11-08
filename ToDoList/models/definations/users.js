@@ -22,7 +22,7 @@ users.init ({
    allowNull : true
     }
 },{
-    name : "UserTable" ,
+    name : "users" ,
     timestamps : true ,
     paranoid : true,
     sequelize : sequelize
