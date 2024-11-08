@@ -9,7 +9,7 @@ module.exports={
     createUser:async(req,res)=>{
         
    try{
-   req.body.userId = uuid;
+   req.body.userId = uuid();
     req.body.password = await hash(req.body.password , 10) ;
    return responseHandler(res , req.body);
    }catch(error){
