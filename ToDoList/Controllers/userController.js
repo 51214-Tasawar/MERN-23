@@ -1,7 +1,8 @@
 const {hash} = require("bcryptjs");
 
 const responseHandler = require("../responseHandler")
-const errorHandler =require("../errorHandler")
+const errorHandler =require("../errorHandler");
+const { response } = require("express");
 
 
 module.exports={
@@ -15,7 +16,11 @@ return errorHandler(res , error)
     } ,
     getUsers:(req,res)=>{
    try{
-      return responseHandler(res , req.query);
+      return res.send({
+        code : 200 ,
+        status : "OK" ,
+        response : req.body 
+      })
    }catch(error){
       return errorHandler(res , error)
    }
