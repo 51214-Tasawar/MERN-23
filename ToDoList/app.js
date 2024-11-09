@@ -11,7 +11,7 @@ const port = 3000;
 
 const app = express();
 
-app.use(bodyParser.urlencoded({ extended: false }))
+app.use(bodyParser.urlencoded({ extended: false , logging:false }))
 app.use(bodyParser.json())
 app.use(morgan("dev"))
 

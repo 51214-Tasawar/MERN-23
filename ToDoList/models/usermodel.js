@@ -11,7 +11,7 @@ const create=async (body)=>{
   }
   }catch(error){
    return {
-    error : error 
+    error : error.errors[0].message 
    }
   }
 }
