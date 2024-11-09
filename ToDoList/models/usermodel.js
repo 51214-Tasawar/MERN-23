@@ -1,15 +1,13 @@
-const { response } = require("express");
 const {model} = require("./index") ;
 
-const create=(body)=>{
+const create=async (body)=>{
   try{
-  const user = model.users.create(
+  const user = await model.users.create(
     {
-        ...body 
-    }
-  )
+      ...body 
+    } )
   return {
-    response : myresponse 
+    response : user 
   }
   }catch(error){
    return {
