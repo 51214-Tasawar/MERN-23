@@ -24,7 +24,7 @@ module.exports = {
 
   getUsers:async (req, res) => {
     try {
-      const response = await getAll(req.body);
+      const response = await getAll();
       if (response.error) {
         return errorHandler(res, response.error);
       }

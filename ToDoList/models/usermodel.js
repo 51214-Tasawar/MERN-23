@@ -18,7 +18,7 @@ const create=async (body)=>{
 
 const getAll=async (body)=>{
   try{
-  const user = await model.users.findAll()
+  const user = await model.users.findOne()
   return {
     response : user 
   }
