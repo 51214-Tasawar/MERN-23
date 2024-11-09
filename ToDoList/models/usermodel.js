@@ -16,4 +16,17 @@ const create=async (body)=>{
   }
 }
 
-module.exports = create;
+const getAll=async (body)=>{
+  try{
+  const user = await model.users.findAll()
+  return {
+    response : user 
+  }
+  }catch(error){
+   return {
+    error : error.errors[0].message 
+   }
+  }
+}
+
+module.exports = { create , getAll };

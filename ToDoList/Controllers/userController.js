@@ -3,7 +3,7 @@ const { v4: uuid } = require("uuid");
 
 const responseHandler = require("../responseHandler");
 const errorHandler = require("../errorHandler");
-const create = require("../models/usermodel");
+const {create , getAll} = require("../models/usermodel");
 
 module.exports = {
   createUser: async (req, res) => {
@@ -22,13 +22,13 @@ module.exports = {
     }
   },
 
-  getUsers: (req, res) => {
+  getUsers:async (req, res) => {
     try {
-      return res.send({
-        code: 200,
-        status: "OK",
-        response: req.body,
-      });
+      const response = await getAll(req.body);
+      if (response.error) {
+        return errorHandler(res, response.error);
+      }
+      return responseHandler(res, response.response); // send the correct response
     } catch (error) {
       return errorHandler(res, error);
     }
