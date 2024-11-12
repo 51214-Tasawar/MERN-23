@@ -18,7 +18,7 @@ const create=async (body)=>{
 
 const getAll=async (body)=>{
   try{
-  const user = await model.users.findOne()
+  const user = await model.users.findAll()
   return {
     response : user 
   }
@@ -28,5 +28,4 @@ const getAll=async (body)=>{
    }
   }
 }
-
 module.exports = { create , getAll };
