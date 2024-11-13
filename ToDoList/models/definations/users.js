@@ -1,6 +1,6 @@
 const {DataTypes , Model} = require("sequelize") ;
 const sequelize = require("../../dbConnection");
-const { Connection } = require("pg");
+
 
 class users extends Model { } ;
 
@@ -21,6 +21,11 @@ users.init ({
     password:{
    type :DataTypes.STRING(1000),
    allowNull : true
+    } ,
+    email :{
+        type : DataTypes.STRING(100),
+        allowNull: false ,
+        defaultValue : " " 
     }
 },{
     name : "users" ,

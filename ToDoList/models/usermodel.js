@@ -1,4 +1,6 @@
+const { response } = require("express");
 const {model} = require("./index") ;
+const { DELETE } = require("sequelize/lib/query-types");
 
 const create=async (body)=>{
   try{
@@ -28,4 +30,35 @@ const getAll=async (body)=>{
    }
   }
 }
-module.exports = { create , getAll };
+
+const Update =async({username ,...body })=>{
+  try{
+  const update = await model.users.update(
+    {
+   ...body
+    },
+    {
+  where : {
+    username : username 
+  }
+  })
+  return {
+    response : user 
+  }
+  } catch(error){
+  return{
+    error : error 
+  }
+  }
+}
+const Delete =({username})=>{
+  try{
+    const Delete = model.users.destroy({where : {username : username}})
+    return{
+      response :Delete
+    }
+  }catch(error){
+      error : error ;
+  }
+}
+module.exports = { create , getAll , Update ,Delete};

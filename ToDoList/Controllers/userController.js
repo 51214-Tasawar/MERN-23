@@ -3,7 +3,8 @@ const { v4: uuid } = require("uuid");
 
 const responseHandler = require("../responseHandler");
 const errorHandler = require("../errorHandler");
-const {create , getAll} = require("../models/usermodel");
+const {create , getAll , Update} = require("../models/usermodel");
+const { response } = require("express");
 
 module.exports = {
   createUser: async (req, res) => {
@@ -24,27 +25,35 @@ module.exports = {
 
   getUsers:async (req, res) => {
     try {
-      const response = await getAll();
-      if (response.error) {
-        return errorHandler(res, response.error);
+      const update = await getAll();
+      if (update.error) {
+        return errorHandler(res, update.error);
       }
-      return responseHandler(res, response.response); // send the correct response
+      return responseHandler(res, update.update); // send the correct response
     } catch (error) {
       return errorHandler(res, error);
     }
   },
 
-  updateUser: (req, res) => {
+  updateUser: async(req, res) => {
     try {
-      return responseHandler(res, req.body);
+      const response = await Update(req.body) ;
+     if(response.error){
+      return errorHandler(res, response.error);
+     }
+     return responseHandler(res, response.response);
     } catch (error) {
       return errorHandler(res, error);
     }
   },
 
-  deleteUser: (req, res) => {
+  deleteUser: async(req, res) => {
     try {
-      return responseHandler(res, req.query);
+      const response = await Update(req.query) ;
+     if(response.error){
+      return errorHandler(res, response.error);
+     }
+     return responseHandler(res, response.response);
     } catch (error) {
       return errorHandler(res, error);
     }

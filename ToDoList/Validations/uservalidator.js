@@ -8,6 +8,7 @@ password : joi.string().min(8).max(1000).required()
 })
 
 const UpdateSchema = joi.object({
+    name : joi.string().min(8).max(100),
     username : joi.string().min(8).max(50).required(),
     password : joi.string().min(8).max(1000).required()
 })

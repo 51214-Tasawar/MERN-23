@@ -4,7 +4,7 @@ const morgan = require("morgan")
 
 const Router=require("./routes/authRouter")
 const routes = require("./routes/userRouter")
-// const {db} = require("./models/index")
+const {db} = require("./models/index")
 
 
 const port = 3000;
@@ -22,9 +22,9 @@ app.use("/users",routes)
 app.listen(port,()=>{
 console.log("The Condition is Checked At the port " ,port) 
 })
-// db.sequelize.sync({alter:true , logging : false }).then(()=>{
-//     console.log("Conected to the Data-Base")
-// }).catch((error)=>{
-//     console.log(error)
-//     console.log("Not Conected To the Data-Base")
-// })
+db.sequelize.sync({alter:true  }).then(()=>{
+    console.log("Conected to the Data-Base")
+}).catch((error)=>{
+    console.log(error)
+    console.log("Not Conected To the Data-Base")
+})
