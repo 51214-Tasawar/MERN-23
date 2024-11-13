@@ -58,7 +58,9 @@ const Delete =({username})=>{
       response :Delete
     }
   }catch(error){
-      error : error ;
+      return{
+        error : error 
+      };
   }
 }
 module.exports = { create , getAll , Update ,Delete};
