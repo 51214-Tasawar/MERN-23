@@ -3,7 +3,7 @@ const { v4: uuid } = require("uuid");
 
 const responseHandler = require("../responseHandler");
 const errorHandler = require("../errorHandler");
-const {create , getAll , Update} = require("../models/usermodel");
+const {create , getAll , Update ,Delete} = require("../models/usermodel");
 const { response } = require("express");
 
 module.exports = {
@@ -49,7 +49,7 @@ module.exports = {
 
   deleteUser: async(req, res) => {
     try {
-      const response = await Update(req.query) ;
+      const response = await Delete(req.query) ;
      if(response.error){
       return errorHandler(res, response.error);
      }

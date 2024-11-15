@@ -63,4 +63,4 @@ const Delete = async({username})=>{
       };
   }
 }
-module.exports = { create , getAll , Update ,Delete};
+module.exports = { create , getAll , Update , Delete};
