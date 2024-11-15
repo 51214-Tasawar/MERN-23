@@ -22,7 +22,7 @@ app.use("/users",routes)
 app.listen(port,()=>{
 console.log("The Condition is Checked At the port " ,port) 
 })
-db.sequelize.sync({alter:true  }).then(()=>{
+db.sequelize.sync({alter:true,  logging : false}).then(()=>{
     console.log("Conected to the Data-Base")
 }).catch((error)=>{
     console.log(error)
