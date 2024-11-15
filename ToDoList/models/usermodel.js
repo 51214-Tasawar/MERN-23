@@ -20,7 +20,12 @@ const create=async (body)=>{
 
 const getAll=async (body)=>{
   try{
-  const user = await model.users.findAll()
+  const user = await model.users.findAll(
+    {
+    attributes : ["name" , "username" , ], // Show the Mention Attribute
+    paranoid : false
+  }
+  )
   return {
     response : user 
   }
