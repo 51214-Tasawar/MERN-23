@@ -17,7 +17,7 @@ module.exports = {
       if (response.error) {
         return errorHandler(res, response.error);
       }
-      return responseHandler(res, response.response); // send the correct response
+      return responseHandler(res, response.response); 
     } catch (error) {
       return errorHandler(res, error);
     }
