@@ -22,10 +22,10 @@ const getAll=async (body)=>{
   try{
   const user = await model.users.findAll(
     {
-    // attributes : ["name" , "username" , "email"], // Show the Mention Attribute
-    attributes : {
-      exclude : ["name" , "username" , "email"]
-    },
+    attributes : ["name" , "username" , "email"], // Show the Mention Attribute
+    // attributes : {
+    //   exclude : ["name" , "username" , "email"]
+    // },
     paranoid : false
   }
   )
