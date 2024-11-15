@@ -51,9 +51,9 @@ const Update =async({username ,...body })=>{
   }
   }
 }
-const Delete =({username})=>{
+const Delete = async({username})=>{
   try{
-    const Delete = model.users.destroy({where : {username : username}})
+    const Delete = await model.users.destroy({where : {username : username}})
     return{
       response :Delete
     }
