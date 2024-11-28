@@ -1,5 +1,6 @@
 const {DataTypes , Model} = require("sequelize") ;
 const sequelize = require("../../dbConnection");
+const vendors = require("./vendors")
 const {v4 : uuid} = require("uuid")
 
 class products extends Model { } ;
@@ -16,6 +17,14 @@ users.init ({
     description :{
         type : DataTypes.STRING(),
         allowNull : false
+    } ,
+    vendorId  : {
+        type : DataTypes.STRING(),
+        allowNull : false ,
+        references :{
+            model :vendors ,
+            key : "vendorId "
+        }
     }
 },{
     name : "products" ,
