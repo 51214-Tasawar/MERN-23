@@ -25,11 +25,11 @@ module.exports = {
 
   getUsers:async (req, res) => {
     try {
-      const update = await getAll();
-      if (update.error) {
-        return errorHandler(res, update.error);
+      const response = await getAll(req.query);
+      if (response.error) {
+        return errorHandler(res, response.error);
       }
-      return responseHandler(res, update.update); // send the correct response
+      return responseHandler(res, response.update); // send the correct response
     } catch (error) {
       return errorHandler(res, error);
     }

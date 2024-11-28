@@ -18,7 +18,7 @@ const create=async (body)=>{
   }
 }
 
-const getAll=async (body)=>{
+const getAll=async ()=>{
   try{
   const user = await model.users.findAll(
     {
