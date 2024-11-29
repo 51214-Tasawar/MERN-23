@@ -5,7 +5,7 @@ const {v4 : uuid} = require("uuid")
 
 class products extends Model { } ;
 
-users.init ({
+products.init ({
     productId :{
         primaryKey : true ,
         type : DataTypes.STRING(100),

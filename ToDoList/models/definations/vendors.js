@@ -1,14 +1,13 @@
 const {DataTypes , Model} = require("sequelize") ;
 const sequelize = require("../../dbConnection");
 const {v4 : uuid} = require("uuid");
-const { allow } = require("joi");
 
 class vendors extends Model { } ;
 
-users.init ({
+vendors.init ({
     vendorId :{
         primaryKey : true ,
-        type : DataTypes.STRING(100),
+        type : DataTypes.STRING(),
     }
 },{
     name : "vendors" ,

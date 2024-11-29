@@ -4,7 +4,7 @@ const {v4 : uuid} = require("uuid")
 
 class attributes extends Model { } ;
 
-users.init ({
+attributes.init ({
     attributeId :{
         primaryKey : true ,
         type : DataTypes.STRING(100),

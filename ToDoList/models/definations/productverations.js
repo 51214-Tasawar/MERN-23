@@ -1,12 +1,13 @@
 const {DataTypes , Model} = require("sequelize") ;
 const sequelize = require("../../dbConnection");
 const products = require("./products")
+
 const {v4 : uuid} = require("uuid");
-const { model } = require("..");
+
 
 class productsverations extends Model { } ;
 
-users.init ({
+productsverations.init ({
     productsverationId :{
         primaryKey : true ,
         type : DataTypes.STRING(100),
