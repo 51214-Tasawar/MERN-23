@@ -26,8 +26,8 @@ products.belongsToMany(vendors , {through : "vendorsHasProducts"})
 // Creating Veriation and attribute relation M:M using veriationsHasattributes
 
 
-// productsverations.hasMany(variationHasAttributes , {foreignKey: "productsverationId"})
-// variationHasAttributes.belongsTo(productsverations , {foreignKey : "productsverationId"})
+productsverations.hasMany(variationHasAttributes , {foreignKey: "productsverationId"})
+variationHasAttributes.belongsTo(productsverations , {foreignKey : "productsverationId"})
 
 
 // attributes.hasMany(variationHasAttributes , {foreignKey :"attributeId "})
