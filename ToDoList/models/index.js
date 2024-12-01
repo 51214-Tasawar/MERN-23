@@ -12,10 +12,10 @@ const model = {users ,products  , vendors
 } ;
 
 // Create 1:M Relation while Vendors is Parent
-// vendors.hasMany(products , {foreignKey : "vendorId"})
-// products.belongsTo(vendors , {foreignKey : "vendorId"})
+vendors.hasMany(products , {foreignKey : "vendorId"})
+products.belongsTo(vendors , {foreignKey : "vendorId"})
 // product and productveriation 1: M Relation
-products.hasMany(productsverations , {foreignKey : "productId"} , as);
+products.hasMany(productsverations , {foreignKey : "productId"} );
 productsverations.belongsTo(products , {foreignKey: "productId"})
 
 
