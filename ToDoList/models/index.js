@@ -30,8 +30,8 @@ productsverations.hasMany(variationHasAttributes , {foreignKey: "productsveratio
 variationHasAttributes.belongsTo(productsverations , {foreignKey : "productsverationId"})
 
 
-// attributes.hasMany(variationHasAttributes , {foreignKey :"attributeId "})
-// variationHasAttributes.belongsTo(attributes , {foreignKey : "attributeId "})
+attributes.hasMany(variationHasAttributes , {foreignKey :"attributeId "})
+variationHasAttributes.belongsTo(attributes , {foreignKey : "attributeId "})
 
 
 
