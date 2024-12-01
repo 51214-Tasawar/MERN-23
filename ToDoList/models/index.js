@@ -20,8 +20,8 @@ productsverations.belongsTo(products , {foreignKey: "productId"})
 
 
 // Creating M:M Relation in this method 
-// vendors.belongsToMany(products , {through : "vendorsHasProducts"})
-// products.belongsToMany(vendors , {through : "vendorsHasProducts"})
+vendors.belongsToMany(products , {through : "vendorsHasProducts"})
+products.belongsToMany(vendors , {through : "vendorsHasProducts"})
 
 // Creating Veriation and attribute relation M:M using veriationsHasattributes
 
