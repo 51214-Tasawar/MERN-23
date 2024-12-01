@@ -21,10 +21,10 @@ products.init ({
     vendorId  : {
         type : DataTypes.STRING(),
         allowNull : false ,
-        references :{
-            model :vendors ,
-            key : "vendorId "
-        }
+        // references :{
+        //     model :vendors ,
+        //     key : "vendorId "
+        // }
     }
 },{
     name : "products" ,

@@ -21,15 +21,15 @@ productsverations.init ({
         allowNull : false
     },
     quantity :{
-        type : DataTypes.NUMBER(),
+        type : DataTypes.INTEGER(),
         allowNull : false
     },
     price : {
-          type : DataTypes.NUMBER(),
+          type : DataTypes.INTEGER(),
           allowNull : false
     }  ,
     productId : {
-          type : DataTypes.STRING(),
+          type : DataTypes.STRING(100),
           allowNull : false ,
           references : {
             model : products ,

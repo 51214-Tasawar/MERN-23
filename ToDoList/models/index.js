@@ -15,8 +15,8 @@ const model = {users ,products  , vendors
 // vendors.hasMany(products , {foreignKey : "vendorId"})
 // products.belongsTo(vendors , {foreignKey : "vendorId"})
 // product and productveriation 1: M Relation
-// products.hasMany(productsverations , {foreignKey : "productId"});
-// productsverations.belongsTo(products , {foreignKey: "productId"})
+products.hasMany(productsverations , {foreignKey : "productId"} , as);
+productsverations.belongsTo(products , {foreignKey: "productId"})
 
 
 // Creating M:M Relation in this method 
