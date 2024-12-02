@@ -50,12 +50,12 @@ module.exports = {
   deleteUser: async(req, res) => {
     try {
       const response = await Delete(req.query) ;
-     if(response.error){
-      return errorHandler(res, response.error);
-     }
-     return responseHandler(res, response.response);
-    } catch (error) {
-      return errorHandler(res, error);
-    }
-  },
+  //    if(response.error){
+  //     return errorHandler(res, response.error);
+  //    }
+  //    return responseHandler(res, response.response);
+  //   } catch (error) {
+  //     return errorHandler(res, error);
+  //   }
+  // },
 };
