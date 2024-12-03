@@ -17,9 +17,11 @@ const Login=({setAuth})=>{
             type="password"
             required
             />
-            <p>don't have account ?<span className="hover:text-blue-400  cursor-pointer">Signup</span> </p>
+            <p>Don't have account ?<span className="hover:text-blue-400  cursor-pointer"
+            onClick={()=>setAuth("signup")}>Signup</span> </p>
          </div>
-         <button className="bg-blue-600 m-2 h-8 rounded-md">Login</button>
+         <button className="bg-blue-600 m-2 h-8 rounded-md" 
+         >Login</button>
         </div>
        </div>
        {/* <h1>Testing Demo</h1> */}
