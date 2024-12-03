@@ -1,10 +1,11 @@
 import React, { useState } from "react";
+import Auth from "./auth";
 
 const App=()=>{
-  const [count , setcount ] = useState(0);
+  
   return(
     <>
-   
+   <Auth/>
     </>
   )
 }
