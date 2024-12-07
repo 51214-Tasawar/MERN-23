@@ -6,17 +6,14 @@ const productsverations = require("./definations/productverations")
 const attributes= require("./definations/attributes")
 const variationHasAttributes = require("./definations/variationHasAttributes")
 
-const model = {users ,products  , vendors 
-    ,productsverations , attributes , 
-    variationHasAttributes
-} ;
+
 
 // Create 1:M Relation while Vendors is Parent
 vendors.hasMany(products , {foreignKey : "vendorId"})
 products.belongsTo(vendors , {foreignKey : "vendorId"})
 // product and productveriation 1: M Relation
-// products.hasMany(productsverations , {foreignKey : "productId"} );
-// productsverations.belongsTo(products , {foreignKey: "productId"})
+products.hasMany(productsverations , {foreignKey : "productId"} );
+productsverations.belongsTo(products , {foreignKey: "productId"})
 
 
 // Creating M:M Relation in this method 
@@ -33,9 +30,14 @@ products.belongsTo(vendors , {foreignKey : "vendorId"})
 // attributes.hasMany(variationHasAttributes , {foreignKey :"attributeId "})
 // variationHasAttributes.belongsTo(attributes , {foreignKey : "attributeId "})
 
-
+const model = {users ,products  , vendors 
+    ,productsverations , attributes , 
+    variationHasAttributes
+} ;
 
 const db = {} ;
+
+
 
 db.sequelize = sequelize;
 sequelize.model = model;
