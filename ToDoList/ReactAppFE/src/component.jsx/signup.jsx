@@ -35,7 +35,9 @@ const Signup=({setAuth})=>{
             />
             <p>Already have account ?<span className="hover:text-blue-400  cursor-pointer"
             onClick={()=>setAuth("login")} >Login</span> </p>
-            <button className="bg-blue-600 m-2 h-8 rounded-md">SignUp</button>
+            <button className="bg-blue-600 m-2 h-8 rounded-md" 
+             onClick={()=>setAuth("login")}
+            >SignUp</button>
          </div> 
         </div>
         
