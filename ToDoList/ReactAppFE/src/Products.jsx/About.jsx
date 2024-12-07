@@ -3,8 +3,8 @@ import { Link } from "react-router-dom";
 const AboutUs=()=>{
    return (
     <>
-    <h1>This Is My Testing Demo</h1>
-    <Link to={""}></Link>
+    <h1>This Is ConTact Page</h1>
+    {/* <Link to={""}></Link> */}
     </>
    )
 }
