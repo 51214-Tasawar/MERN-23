@@ -22,10 +22,10 @@ const App=()=>{
       <Route path="/Create-Product"> element={<Create/>}</Route>
       <Route path="/Get-Products" element={<Get/>}></Route>
       </Route>
-      {/* <Route path="/homepage" element={<Homepage/>}></Route> */}
+      <Route path="/homepage" element={<Homepage/>}></Route>
       <Route path="/contactUs" element={<ContactUs/>}></Route>
-      <Route  path="/AboutUs" element={<AboutUs/>}></Route>
-      <Route path="/services" element={<Services/>}></Route>
+      {/* <Route  path="/AboutUs" element={<AboutUs/>}></Route>
+      <Route path="/services" element={<Services/>}></Route> */}
     </Routes>
    
    
