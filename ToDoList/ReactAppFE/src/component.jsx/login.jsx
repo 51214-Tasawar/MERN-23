@@ -25,7 +25,7 @@ const Login=({setAuth})=>{
          </div>
          <button className="bg-blue-600 m-2 h-8 rounded-md" 
          onClick={()=>{
-            navigate("/homepage")
+            navigate("/products")
          }}>Login</button>
         </div>
        </div>
