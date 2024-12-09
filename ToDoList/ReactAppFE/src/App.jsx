@@ -19,8 +19,8 @@ const App=()=>{
       <Route path="/Index" element={<Index />}></Route>
       <Route path="/products">
       <Route  element={<Products/>}></Route>
-      <Route path="/Create-Product"> element={<Create/>}</Route>
-      <Route path="/Get-Products" element={<Get/>}></Route>
+      <Route path="Create-Product" element={<Create/>}></Route>
+      <Route path="Get-Products" element={<Get/>}></Route>
       </Route>
       <Route path="/homepage" element={<Homepage/>}></Route>
       <Route path="/contactUs" element={<ContactUs/>}></Route>
