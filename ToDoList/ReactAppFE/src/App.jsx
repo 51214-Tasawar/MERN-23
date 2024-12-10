@@ -1,34 +1,11 @@
-import React, { useState } from "react";
-import Auth from "./auth";
-import Index from "..";
-import { Route, Routes } from "react-router-dom";
-import Products from "../product";
-// import Homepage from "./Products.jsx/Home";
-// import ContactUs from "./Products.jsx/ContactUs";
-// import AboutUs from "./Products.jsx/About";
-// import Services from "./Products.jsx/Services";
-import Create from "./Products.jsx/create";
-import Get from "./Products.jsx/get";
+import React from "react";
 
-const App=()=>{
-  
-  return(
+const Layouts = () => {
+  return (
     <>
-    <Routes>
-      <Route path="/" element={<Auth/>}></Route>
-      <Route path="/Index" element={<Index />}></Route>
-      <Route path="/products" element={<Products/>}>
-      <Route index path="Create-Product" element={<Create/>}/>
-      <Route path="Get-Products" element={<Get/>}/>
-      </Route>
-      {/* <Route path="/homepage" element={<Homepage/>}></Route>
-      <Route path="/contactUs" element={<ContactUs/>}></Route>
-      <Route  path="/AboutUs" element={<AboutUs/>}></Route>
-      <Route path="/services" element={<Services/>}></Route> */}
-    </Routes>
-   
-   
+      <div className="h-full w-full bg-red-700"></div>
     </>
-  )
-}
-export default App
+  );
+};
+
+export default Layouts;
