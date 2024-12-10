@@ -4,7 +4,6 @@ const Create =()=>{
     return(
         <>
         <p>Create Products Page</p>
-        <Link to={""}>Get Products</Link>
         </>
     )
 }

@@ -1,7 +1,13 @@
+import { Link } from "react-router-dom"
+
 const Products =()=>{
     return(
         <>
-        <p>This Is My Products Page</p>
+      <hi>Testing for Heading Tags</hi>
+      <div className="flex flex-col">
+     <Link to={"/Create-Product"}> Create</Link>
+     <Link to={"/Get-Products"}>Get</Link>
+      </div>
         </>
     )
 }
