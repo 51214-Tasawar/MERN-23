@@ -26,7 +26,7 @@ module.exports = {
    }catch(error){
     return res.send({
      status: "Not Ok",
-     code : 400 ,
+     code : 400 ,   
      error : error.message
     })
      }

@@ -11,17 +11,14 @@ const users = require("./definations/users");
 // products.hasMany(productsverations , {foreignKey : "productId" , as : "productsveration" } );
 // productsverations.belongsTo(products , {foreignKey: "productId" ,  as :"product"})
 
-
 // Creating M:M Relation in this method 
 // vendors.belongsToMany(products , {through : "vendorsHasProducts"})
 // products.belongsToMany(vendors , {through : "vendorsHasProducts"})
 
 // Creating Veriation and attribute relation M:M using veriationsHasattributes
 
-
 // productsverations.hasMany(variationHasAttributes , {foreignKey: "productsverationId"})
 // variationHasAttributes.belongsTo(productsverations , {foreignKey : "productsverationId"})
-
 
 // attributes.hasMany(variationHasAttributes , {foreignKey :"attributeId "})
 // variationHasAttributes.belongsTo(attributes , {foreignKey : "attributeId "})
