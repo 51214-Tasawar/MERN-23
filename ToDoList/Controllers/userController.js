@@ -1,5 +1,4 @@
-const { hash } = require("bcryptjs");
-const { v4: uuid } = require("uuid");
+
 
 const responseHandler = require("../responseHandler");
 const errorHandler = require("../errorHandler");
@@ -9,8 +8,7 @@ const { response } = require("express");
 module.exports = {
   createUser: async (req, res) => {
     try {
-      req.body.userId = uuid();
-      req.body.password = await hash(req.body.password, 10);
+   
       const response = await create(req.body);
 
       // Check if there's an error in the response
