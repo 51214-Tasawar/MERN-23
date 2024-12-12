@@ -1,7 +1,9 @@
 const {DataTypes , Model} = require("sequelize") ;
 const sequelize = require("../../dbConnection");
 const productsverations = require("./productverations")
+
 const attributes = require("./attributes") 
+
 const {v4 : uuid} = require("uuid");
 
 
@@ -12,11 +14,11 @@ variationHasAttributes.init ({
         primaryKey : true ,
         type : DataTypes.STRING(100),
     } ,
-    productsverationId : {
+    productverationId : {
         type : DataTypes.STRING(),
         references :{
             model : productsverations ,
-            key : "productsverationId"
+            key : "productverationId"
         }
     } ,
     attributeId :{
