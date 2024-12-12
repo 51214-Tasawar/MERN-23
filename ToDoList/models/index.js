@@ -26,10 +26,17 @@ productsverations.belongsTo(products , {foreignKey: "productId",  as : "product"
 // products.belongsToMany(Vendors , {through : "vendorsHasProducts"})
 
 // Creating Veriation and attribute relation M:M using veriationsHasattributes
-productsverations.hasMany(variationHasAttributes , {foreignKey: "productsverationId"})
-variationHasAttributes.belongsTo(productsverations , {foreignKey : "productsverationId"})
-attributes.hasMany(variationHasAttributes , {foreignKey :"attributseId "})
-variationHasAttributes.belongsTo(attributes , {foreignKey : "attributseId "})
+productsverations.hasMany(variationHasAttributes ,
+     {foreignKey: "productsverationsId"})
+
+variationHasAttributes.belongsTo(productsverations , 
+    {foreignKey : "productsverationsId"})
+
+attributes.hasMany(variationHasAttributes , 
+    {foreignKey :"attributeId " , as: "attributes"})
+
+variationHasAttributes.belongsTo(attributes , 
+    {foreignKey : "attributeId " , as:"attribute"})
 
 const model = {users};
 
