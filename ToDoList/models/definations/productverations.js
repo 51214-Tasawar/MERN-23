@@ -1,5 +1,6 @@
 const {DataTypes , Model} = require("sequelize") ;
 const sequelize = require("../../dbConnection");
+const products = require("./products");
 
 
 class productverations extends Model { } ;
@@ -9,7 +10,7 @@ productverations.init ({
         primaryKey : true ,
         type : DataTypes.STRING(100),
     },
-    productnamename:{
+    productname:{
         type : DataTypes.STRING(100),
         allowNull : false
     },
@@ -21,7 +22,15 @@ productverations.init ({
     Quentity:{
    type :DataTypes.STRING(1000),
    allowNull : true
-    } 
+    } ,
+    productId : {
+        type : DataTypes.STRING() ,
+        allowNull : false ,
+        references :{
+            model : products ,
+            key : "productId"
+        }
+    }
 },{
     name : "productverations" ,
     timestamps : true ,
@@ -30,36 +39,3 @@ productverations.init ({
 });
 
 module.exports = productverations ; 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

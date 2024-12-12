@@ -1,11 +1,11 @@
 const {DataTypes , Model} = require("sequelize") ;
 const sequelize = require("../../dbConnection");
-
+const Vendors = require("./vendors")
 
 class products extends Model { } ;
 
 products.init ({
-    productId :{
+    productId:{
         primaryKey : true ,
         type : DataTypes.STRING(100),
     },
@@ -26,6 +26,15 @@ products.init ({
         type : DataTypes.STRING(100),
         allowNull: false ,
         defaultValue : " " 
+    } , 
+    VendorId :{
+        type: DataTypes.STRING() ,
+        allowNull : false, 
+        references : {
+         model : Vendors ,
+         key : "VendorId"
+        }
+
     }
 },{
     name : "products" ,
