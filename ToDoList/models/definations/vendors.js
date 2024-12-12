@@ -2,64 +2,36 @@ const {DataTypes , Model} = require("sequelize") ;
 const sequelize = require("../../dbConnection");
 
 
-class productverations extends Model { } ;
+class Vendors extends Model { } ;
 
-productverations.init ({
-    productverationId :{
+Vendors.init ({
+    VendorId :{
         primaryKey : true ,
         type : DataTypes.STRING(100),
     },
-    productnamename:{
+    name:{
         type : DataTypes.STRING(100),
         allowNull : false
     },
-    price: {
+    username: {
         unique : true ,
         allowNull:false ,
         type : DataTypes.STRING(100)
     },
-    Quentity:{
+    password:{
    type :DataTypes.STRING(1000),
    allowNull : true
-    } 
+    } ,
+    email :{
+        type : DataTypes.STRING(100),
+        allowNull: false ,
+        defaultValue : " " 
+    }
 },{
-    name : "productverations" ,
+    name : "Vendors" ,
     timestamps : true ,
     paranoid : true,
     sequelize : sequelize
 });
 
-module.exports = productverations ; 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+module.exports = Vendors ; 

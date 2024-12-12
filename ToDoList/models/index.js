@@ -1,15 +1,16 @@
 const sequelize = require("../dbConnection");
 const users = require("./definations/users");
-
-
+const Vendors = require("./definations/vendors")
+const products = require("./definations/products")
+const productsverations = require("./definations/productverations")
 
 
 // Create 1:M Relation while Vendors is Parent
-// vendors.hasMany(products , {foreignKey : "vendorId"})
-// products.belongsTo(vendors , {foreignKey : "vendorId"})
-// // product and productveriation 1: M Relation
-// products.hasMany(productsverations , {foreignKey : "productId" , as : "productsveration" } );
-// productsverations.belongsTo(products , {foreignKey: "productId" ,  as :"product"})
+Vendors.hasMany(products , {foreignKey : "vendorId"})
+products.belongsTo(Vendors , {foreignKey : "vendorId"})
+// product and productveriation 1: M Relation
+products.hasMany(productsverations , {foreignKey : "productId" , as : "productsveration" } );
+productsverations.belongsTo(products , {foreignKey: "productId" ,  as :"product"})
 
 // Creating M:M Relation in this method 
 // vendors.belongsToMany(products , {through : "vendorsHasProducts"})
